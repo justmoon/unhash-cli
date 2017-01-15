@@ -1,0 +1,32 @@
+{
+  "name": "unhash-cli",
+  "version": "0.0.0",
+  "description": "Command line interface (CLI) for Unhash protocol",
+  "main": "index.js",
+  "bin": {
+    "unhash-cli": "./bin/unhash.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/justmoon/unhash-cli.git"
+  },
+  "keywords": [
+    "unhash",
+    "cli",
+    "upload",
+    "manage"
+  ],
+  "author": "Stefan Thomas <justmoon@members.fsf.org>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/justmoon/unhash-cli/issues"
+  },
+  "homepage": "https://github.com/justmoon/unhash-cli#readme",
+  "dependencies": {
+    "unhash-upload": "0.1.0",
+    "yargs": "^6.6.0"
+  }
+}
