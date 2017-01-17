@@ -1,10 +1,16 @@
 #!/usr/bin/env node
 
 const upload = require('unhash-upload')
+const unhash = require('unhash')
+
+function handleError (err) {
+  console.error(err.stack)
+  process.exit(1)
+}
 
 const yargs = require('yargs')
   .usage('$0 <cmd> [args]')
-  .command('upload [file]', 'upload a file', {
+  .command('upload <file>', 'upload a file', {
     file: {
     }
   }, function (argv) {
@@ -13,11 +19,18 @@ const yargs = require('yargs')
         console.log(`uploaded to ${hostUpload.uri}`)
       }
       process.exit(0)
-    }, (err) => {
-      console.error(err.stack)
-      process.exit(1)
-    })
+    }, handleError)
   })
+  .command('download <hash>', 'download the file with the given hash', {
+    hash: {
+    }
+  },
+    function (argv) {
+      unhash(argv.hash).then((result) => {
+        process.stdout.write(result)
+      })
+        .catch((err) => handleError)
+    }, handleError)
   .strict()
   .help()
 
