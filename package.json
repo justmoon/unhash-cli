@@ -27,7 +27,7 @@
   "homepage": "https://github.com/justmoon/unhash-cli#readme",
   "dependencies": {
     "unhash": "^0.1.0",
-    "unhash-upload": "0.1.0",
+    "unhash-upload": "0.2.0",
     "yargs": "^6.6.0"
   }
 }
