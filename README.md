@@ -5,21 +5,17 @@ This is a command line utility for the Unhash protocol.
 ## Installation
 
 ``` sh
-npm install --global unhash-cli
-```
-
-After installation the `unhash-cli` command line utility will be in your path:
-
-``` sh
-unhash-cli
+git clone git@github.com:justmoon/unhash-cli.git 
 ```
 
 ## Usage
 
 ### Uploading a file
 
-To upload a file, use the `unhash-cli upload [filename]` command.
+To upload a test file, for example our README.md file, use: 
 
 ``` sh
-unhash-cli upload package.json
+$ export UNHASH_HOSTS='["localhost:3000"]'
+$ npm install
+$ UNHASH_ILP_CREDENTIALS='{"server":"wss://s.altnet.rippletest.net:51233","secret":"ss6YmrV2dNNPLjzqgdjSvktJvz5Vs"}' ./bin/unhash.js upload README.md
 ```
